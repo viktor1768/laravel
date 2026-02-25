@@ -8,11 +8,13 @@
 <body>
 		@foreach ($arr as $key => $elem)
 		<ul>
-			{{ $key }} - {{ $elem }}
+			@if($elem % 2 == 0)
+			{{ $key }} - 
+			{{ $elem }}
+			@endif
 		</ul>
 		
 		@endforeach
 
 </body>
 </html>
-	
