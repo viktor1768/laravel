@@ -6,7 +6,7 @@
 		{
 			return view('components.tag-content', [
 				'title' => 'title page',
-				'arr' => ['Sweden','Omsk','Moscow','Turkey'],
+				'arr' => [1,2,3,4],
 				'text' => $text,
 
 			]);

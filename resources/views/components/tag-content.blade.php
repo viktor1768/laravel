@@ -8,7 +8,7 @@
 <body>
 		@foreach ($arr as $elem)
 		<ul>
-			{{ $elem }}
+			{{ $elem ** 2}}
 		</ul>
 		
 		@endforeach
