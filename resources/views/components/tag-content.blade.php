@@ -7,10 +7,8 @@
 </head>
 <body>
 			Текст - 
-			@if($age >= 18)
-			Текст больше или равно 18 
-			@else
-			Текст меньше 18
-			@endif
+			@unless($age >= 18)
+			вам нету 18
+			@endunless
 </body>
 </html>
