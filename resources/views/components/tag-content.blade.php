@@ -6,7 +6,11 @@
 	<title>{{$title}}</title>
 </head>
 <body>
-		<p>{!!$str!!}</p>
-		<p>{{$text}}</p>
+			Текст - 
+			@if($age >= 18)
+			Текст больше или равно 18 
+			@else
+			Текст меньше 18
+			@endif
 </body>
 </html>
