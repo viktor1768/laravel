@@ -6,12 +6,13 @@
 	<title>{{$title}}</title>
 </head>
 <body>
-		@foreach ($arr as $elem)
+		@foreach ($arr as $key => $elem)
 		<ul>
-			{{ $elem ** 2}}
+			{{ $key }} - {{ $elem }}
 		</ul>
 		
 		@endforeach
 
 </body>
 </html>
+	
