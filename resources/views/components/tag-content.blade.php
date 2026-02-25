@@ -6,7 +6,7 @@
 	<title>{{$title}}</title>
 </head>
 <body>
-		<p>{{$str}}</p>
+		<p>{!!$str!!}</p>
 		<p>{{$text}}</p>
 </body>
 </html>
