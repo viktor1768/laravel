@@ -2,11 +2,12 @@
 	namespace App\Http\Controllers;
 	class TagController extends Controller
 	{
-		public function alltag($age)
+		public function alltag($text)
 		{
 			return view('components.tag-content', [
 				'title' => 'title page',
-				'age' => $age,
+				'arr' => ['country'=>'Sweden','city'=>'Omsk'],
+				'age' => $text,
 
 			]);
 		}

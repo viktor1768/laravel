@@ -6,9 +6,11 @@
 	<title>{{$title}}</title>
 </head>
 <body>
-			Текст - 
-			@unless($age >= 18)
-			вам нету 18
-			@endunless
+		@if (count($arr) >= 1)
+	    в массиве есть записи
+        @else
+	    в массиве нет записей
+        @endif
+
 </body>
 </html>

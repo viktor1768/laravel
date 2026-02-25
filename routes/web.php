@@ -7,4 +7,4 @@ use App\Http\Controllers\TagController;
 
 Route::get('/user/{name}/{surname}', [UserController::class, 'all']);
 Route::get('/blade/{text}', [BladeController::class, 'allblade']);
-Route::get('/tag/{age}', [TagController::class, 'alltag']);
+Route::get('/tag/{text}', [TagController::class, 'alltag']);
