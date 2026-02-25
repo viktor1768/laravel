@@ -6,11 +6,12 @@
 	<title>{{$title}}</title>
 </head>
 <body>
-		@if (count($arr) >= 1)
-	    в массиве есть записи
-        @else
-	    в массиве нет записей
-        @endif
+		@foreach ($arr as $elem)
+		<ul>
+			{{ $elem }}
+		</ul>
+		
+		@endforeach
 
 </body>
 </html>

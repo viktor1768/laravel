@@ -6,8 +6,8 @@
 		{
 			return view('components.tag-content', [
 				'title' => 'title page',
-				'arr' => ['country'=>'Sweden','city'=>'Omsk'],
-				'age' => $text,
+				'arr' => ['Sweden','Omsk','Moscow','Turkey'],
+				'text' => $text,
 
 			]);
 		}
