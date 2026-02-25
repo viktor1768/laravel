@@ -6,15 +6,16 @@
 	<title>{{$title}}</title>
 </head>
 <body>
-		@foreach ($arr as $key => $elem)
-		<ul>
-			@if($elem % 2 == 0)
-			{{ $key }} - 
-			{{ $elem }}
-			@endif
-		</ul>
-		
+	<ul>
+		@foreach ($employees as $subArr)
+		 <li>
+			{{ $subArr['name'] }}
+		</li>
 		@endforeach
-
+		
+		
+		 
+    </ul>
 </body>
 </html>
+	
