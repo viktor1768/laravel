@@ -6,6 +6,7 @@ use App\Http\Controllers\BladeController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ArrController;
 use App\Http\Controllers\DumpController;
+use App\Http\Controllers\ColController;
 
 Route::get('/user/{name}/{surname}', [UserController::class, 'all']);
 
@@ -16,3 +17,5 @@ Route::get('/tag/{text}', [TagController::class, 'alltag']);
 Route::get('/arr', [ArrController::class, 'allarr']);
 
 Route::get('/dump', [DumpController::class, 'dumparr']);
+
+Route::get('/collection', [ColController::class, 'index']);
