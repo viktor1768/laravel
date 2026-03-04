@@ -7,9 +7,9 @@
 </head>
 <body>
 	<ul>
-		@foreach ($employees as $subArr)
+		@foreach ($employees as $key => $subArr)
 		 <li>
-			{{ $subArr['name'] }}
+			{{$key}} - {{ $subArr['name'] }} {{ $subArr['surname'] }} {{ $subArr['salary'] }}
 		</li>
 		@endforeach
 		
