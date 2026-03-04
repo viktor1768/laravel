@@ -4,10 +4,15 @@
 	class ColController extends Controller {
 		public function index()
 		{
-			$collection = collect([1, 2, 3,4,5,6,7,8,921,3,21,2,34,1]);
-			$groups = $collection->split($collection->count()/3);
+			$collection = collect([
+    ['product' => 'Desk', 'price' => 200],
+    ['product' => 'Chair', 'price' => 100],
+    ['product' => 'Bookcase', 'price' => 150],
+    ['product' => 'Door', 'price' => 100],]);
+	$filtered = $collection->where('price', 100);
+
 			dd([
-				'average' => $groups,
+				'average' => $filtered,
 				'collection' => $collection,
 				'title' => 'Заголовок',
 			]);
