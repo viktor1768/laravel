@@ -8,10 +8,10 @@
 <body>
 	<ul>
 		@foreach ($arr as $elem)
-		@if($loop->remaining>=3)
+		@if($elem!=0)
 		<b>{{$elem}}</b>
 		@else
-		<i>{{$elem}}</i>
+		@break
 		@endif
 		@endforeach
 			 
