@@ -9,7 +9,7 @@
 	<ul>
 		@foreach ($arr as $elem)
 		<li>
-			{{$loop->index}} -
+			{{$loop->iteration}} -
 			{{$elem}}
 		</li>
 		@endforeach
