@@ -7,13 +7,9 @@
 </head>
 <body>
 	<ul>
-		@foreach ($arr as $elem)
-		@if($elem!=0)
-		<b>{{$elem}}</b>
-		@else
-		@break
-		@endif
-		@endforeach
+		@for ($i=0;$i<=10;$i++)
+		<p>{{$i}}</p>
+		@endfor
 			 
     </ul>
 </body>
