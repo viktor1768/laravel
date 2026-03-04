@@ -8,14 +8,18 @@
 <body>
 	<ul>
 		@foreach ($arr as $elem)
-		<li>
-			{{$loop->iteration}} -
-			{{$elem}}
+		@if($loop->first)
+		<li style = "color: red">
+			{{$elem}} - первая итерация
 		</li>
+		@endif
+		@if($loop->last)
+		<li style = "color: green">
+			{{$elem}} - последняя итерация
+		</li>
+		@endif
 		@endforeach
-		
-		
-		 
+			 
     </ul>
 </body>
 </html>
