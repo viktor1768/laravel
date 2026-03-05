@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->id();
-            $table->text('name');
-            $table->text('surname');
-            $table->dateTime('birthday');
-            $table->timestamps();
+        Schema::table('user', function (Blueprint $table) {
+		$table->text('desc');
         });
     }
 
@@ -25,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user');
+        //
     }
 };
