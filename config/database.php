@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Str;
+use Illuminate\Database\DBAL\TimestampType;
+
 
 return [
 
@@ -82,6 +84,12 @@ return [
                 (PHP_VERSION_ID >= 80500 ? \Pdo\Mysql::ATTR_SSL_CA : \PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+	    'dbal' => [
+	        'types' => [
+	            'timestamp' => TimestampType::class,
+	        ],
+	    ],
+
 
         'pgsql' => [
             'driver' => 'pgsql',
