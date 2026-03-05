@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('user', function (Blueprint $table) {
-		$table->text('desc');
-        $table->varchar('email',100);
+        $table->string('email',100);
         });
     }
 
@@ -25,3 +24,4 @@ return new class extends Migration
         //
     }
 };
+
