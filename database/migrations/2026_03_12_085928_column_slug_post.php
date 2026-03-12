@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('user', function (Blueprint $table) {
-            $table->integer('age')->nullable();
+        Schema::table('posts', function (Blueprint $table) {
+		$table->text('slug');
         });
     }
 
@@ -21,7 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user');
+        //
     }
 };
-
