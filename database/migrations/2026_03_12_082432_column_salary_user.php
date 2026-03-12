@@ -12,11 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('user', function (Blueprint $table) {
-            $table->id();
-            $table->text('name');
-            $table->text('surname');
-            $table->dateTime('birthday');
-            $table->timestamps();
+            $table->integer('salary')->comment('default value')->default(0);
         });
     }
 
