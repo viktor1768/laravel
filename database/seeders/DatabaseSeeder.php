@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,13 +20,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-            DB::table('posts')->insert([
+            DB::table('users')->insert([
 				[
-					'title' => Str::random(10),
-					'slug'  => Str::random(10),
-					'text'  => Str::random(10),
-                    'name' => Str::random(5).'.'.Str::random(10).'.com',
-                    'desc' => Str::random(50),
+				'name' => Str::random(10),
+				'email' => Str::random(10).'@gmail.com',
+				'password' => Hash::make('12345'),
 				],  
 			]);
 
