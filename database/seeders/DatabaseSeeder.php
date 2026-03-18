@@ -17,34 +17,12 @@ class DatabaseSeeder extends Seeder
     use WithoutModelEvents;
     public function run(): void
     {
-        $this->call([
-            PostSeeder::class,
-            CommentSeeder::class,
-        ]);
 
-            DB::table('users')->insert([
+            DB::table('posts')->insert([
 				[
-				'name' => Str::random(10),
-				'email' => Str::random(10).'@gmail.com',
-				'password' => Hash::make('12345'),
-				],  
-			]);
-
-
-    }
-}
-class PostSeeder extends Seeder
-{
-    use WithoutModelEvents;
-
-    public function run(): void
-    {
-
-            DB::table('users')->insert([
-				[
-				'name' => Str::random(10),
-				'email' => Str::random(10).'@gmail.com',
-				'password' => Hash::make('12345'),
+				'title' => Str::random(10),
+				'slug' => Str::random(30),
+				'likes' => rand(50,800),
 				],  
 			]);
 

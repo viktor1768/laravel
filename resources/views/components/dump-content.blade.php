@@ -3,15 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{$title}}</title>
+	<title>{{$titling}}</title>
 </head>
 <body>
-	<ul>
-		@for ($i=0;$i<=10;$i++)
-		<p>{{$i}}</p>
-		@endfor
-			 
-    </ul>
+	@foreach ($posts as $post)
+		<div>
+			<h2>{{ $post->title }}</h2>
+			<div>
+				<p>{{ $post->slug }}</p>
+				<p>{{ $post->likes }}</p>
+			</div>
+		</div>
+	@endforeach
 </body>
 </html>
 	

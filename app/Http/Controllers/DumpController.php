@@ -1,14 +1,14 @@
 <?php
 	namespace App\Http\Controllers;
+	use Illuminate\Support\Facades\DB; 
 	class DumpController extends Controller
 	{
 		public function dumparr()
 		{
+			$posts = DB::table('posts')->where('likes', '>' ,200)->get();
 			return view('components.dump-content', [
-				'title' => 'title page',
-				'arr' => [1,2,3,4,5,6,7,8,9,0,10],
-
-
+				'posts' => $posts,
+				'titling' => 'page',
 			]);
 		}
 	}
