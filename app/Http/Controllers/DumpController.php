@@ -5,7 +5,7 @@
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->whereBetween('age', [0,29])->orWhereBetween('age',[41,80])->get();
+			$users = DB::table('users')->whereIn('id',[1,2,3,5])->get();
 			return view('components.dump-content', [
 				'users' => $users,
 				'titling' => 'page',
