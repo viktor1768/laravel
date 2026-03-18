@@ -6,7 +6,18 @@
 	<title>{{$titling}}</title>
 </head>
 <body>
-	<p>{{$users}}</p>
+<table>
+	@foreach($users as $user)
+	<tr>
+		<td style = "border: 1px solid #000000">{{$user->id}}</td>
+		<td style = "border: 1px solid #000000">{{$user->name}}</td>
+		<td style = "border: 1px solid #000000">{{$user->email}}</td>
+		<td style = "border: 1px solid #000000">{{$user->age}}</td>
+		<td style = "border: 1px solid #000000">{{$user->salary}}</td>
+		<td style = "border: 1px solid #000000">{{$user->password}}</td>
+	</tr>
+	@endforeach
+</table>
 </body>
 </html>
 	
