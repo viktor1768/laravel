@@ -5,7 +5,7 @@
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->where('age', '>', 30)->get();
+			$users = DB::table('users')->whereBetween('age', [20,30])->get();
 			return view('components.dump-content', [
 				'users' => $users,
 				'titling' => 'page',
@@ -13,3 +13,4 @@
 		}
 	}
 ?>	
+	
