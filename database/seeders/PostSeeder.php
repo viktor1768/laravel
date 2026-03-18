@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
-
-class DatabaseSeeder extends Seeder
-{
-    use WithoutModelEvents;
+class PostSeeder extends Seeder {
     public function run(): void
     {
-			$this->call([
-				PostSeeder::class,
-				CommentSeeder::class,
+        for ($x=0; $x<8; $x++){
+
+            DB::table('posts')->insert([
+				[
+				'title' => Str::random(10),
+				'slug' => Str::random(30),
+				'likes' => rand(50,800),
+				],  
 			]);
-
-
+        }
     }
 }
-

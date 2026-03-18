@@ -5,9 +5,9 @@
 	{
 		public function dumparr()
 		{
-			$posts = DB::table('posts')->where('likes', '>' ,200)->get();
+			$users = DB::table('users')->get();
 			return view('components.dump-content', [
-				'posts' => $posts,
+				'users' => $users,
 				'titling' => 'page',
 			]);
 		}
