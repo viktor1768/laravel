@@ -5,9 +5,7 @@
 	{
 		public function dumparr()
 		{
-			DB::table('users')->where('age','>', 30)->update([
-				'salary' => 500,
-			]);
+			DB::table('users')->where('id','=', 5)->delete();
 			$users = DB::table('users')->get();
 			return view('components.dump-content', [
 				'users' => $users,
