@@ -5,7 +5,7 @@
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->orderBy('salary', 'desc')->get();
+			$users = DB::table('users')->oldest()->where('age', '>', 30)->get();
 			return view('components.dump-content', [
 				'users' => $users,
 				'titling' => 'page',
