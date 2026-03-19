@@ -17,8 +17,9 @@ class PostSeeder extends Seeder {
             DB::table('posts')->insert([
 				[
 				'title' => Str::random(10),
-				'slug' => Str::random(30),
-				'likes' => rand(50,800),
+				'desc' => Str::random(25),
+				'create_post' => date('d-m-y', mktime(0, 0, 0, rand(0,12), rand(0,28), rand(0,20))),
+                'text' => Str::random(50),
 				],  
 			]);
         }
