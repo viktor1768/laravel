@@ -5,7 +5,7 @@
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->inRandomOrder()->whereBetween('age', [20,70])->take(3)->get();
+			$users = DB::table('users')->whereBetween('age', [20,70])->skip(5)->take(3)->get();
 			return view('components.dump-content', [
 				'users' => $users,
 				'titling' => 'page',
