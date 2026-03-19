@@ -5,7 +5,7 @@
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->oldest()->where('age', '>', 30)->get();
+			$users = DB::table('users')->inRandomOrder()->take(1)->get();
 			return view('components.dump-content', [
 				'users' => $users,
 				'titling' => 'page',
