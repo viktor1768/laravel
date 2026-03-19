@@ -5,7 +5,7 @@
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->whereNotIn('id',[1,2,3,5])->get();
+			$users = DB::table('users')->orderBy('age')->get();
 			return view('components.dump-content', [
 				'users' => $users,
 				'titling' => 'page',
