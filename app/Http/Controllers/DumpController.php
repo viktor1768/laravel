@@ -5,7 +5,6 @@
 	{
 		public function dumparr()
 		{
-			DB::table('users')->delete();
 			$users = DB::table('users')->get();
 			return view('components.dump-content', [
 				'users' => $users,

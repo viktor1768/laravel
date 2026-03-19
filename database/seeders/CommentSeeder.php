@@ -21,6 +21,7 @@ class CommentSeeder extends Seeder {
 				'age' => rand(10,80),
                 'salary' => rand(12000,80000),
                 'password' => Hash::make('12345'),
+                'cities' => Str::random(7).'`s',
 				],  
 			]);
         }

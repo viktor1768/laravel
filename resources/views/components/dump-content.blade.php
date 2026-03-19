@@ -15,6 +15,7 @@
 		<td style = "border: 1px solid #000000">{{$user->age}}</td>
 		<td style = "border: 1px solid #000000">{{$user->salary}}</td>
 		<td style = "border: 1px solid #000000">{{$user->password}}</td>
+		<td style = "border: 1px solid #000000">{{$user->cities}}</td>
 	</tr>
 	@endforeach
 </table>
