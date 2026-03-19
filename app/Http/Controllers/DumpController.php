@@ -5,14 +5,10 @@
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->get();
-			$ids = DB::table('users')->insert([
-				'name' => 'sdadsa',
-				'email' => '231321sad',
-				'age' => 15,
-				'salary' => 21323,
-				'password' => '2313dsfklnzc',
+			DB::table('users')->where('age','>', 30)->update([
+				'salary' => 500,
 			]);
+			$users = DB::table('users')->get();
 			return view('components.dump-content', [
 				'users' => $users,
 				'titling' => 'page',
