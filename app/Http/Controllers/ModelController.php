@@ -5,11 +5,12 @@
 
 	class ModelController extends Controller
 	{
-		public function index()
+		public function index($number)
 		{
-			$posts = Post::where('id', '>', 1)->orderBy('title','desc')->take(5)->get();
+			$posts = Post::find($number);
 
 			return view('components.model-content', ['posts'=> $posts]);
+			
 			
 		}
 	}

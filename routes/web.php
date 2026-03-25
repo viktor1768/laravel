@@ -21,4 +21,4 @@ Route::get('/dump', [DumpController::class, 'dumparr']);
 
 Route::get('/collection', [ColController::class, 'index']);
 
-Route::get('/model', [ModelController::class, 'index']);
+Route::get('/model/{number}', [ModelController::class, 'index'])->where(['id'=>'[0-9]+']);
