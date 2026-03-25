@@ -5,9 +5,9 @@
 
 	class ModelController extends Controller
 	{
-		public function index($number)
+		public function index()
 		{
-			$posts = Post::find($number);
+			$posts = Post::where('id','>', 0)->oldest('create_post')->get();
 
 			return view('components.model-content', ['posts'=> $posts]);
 			

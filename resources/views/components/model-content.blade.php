@@ -6,7 +6,15 @@
 	<title>title page</title>
 </head>
 <body>
-	<p>{{$posts}}</p>
+<table>
+	@foreach($posts as $poster)
+	<tr>
+		<td style = "border: 1px solid #000000">{{$poster->id}}</td>
+		<td style = "border: 1px solid #000000">{{$poster->title}}</td>
+		<td style = "border: 1px solid #000000">{{$poster->create_post}}</td>
+	</tr>
+	@endforeach
+</table>
 </body>
 </html>
 	
