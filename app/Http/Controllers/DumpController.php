@@ -1,13 +1,15 @@
 <?php
-	namespace App\Http\Controllers;
-	use Illuminate\Support\Facades\DB; 
+	namespace App\Http\Controllers; 
+	
+    use App\Models\Post;
+    use App\Http\Controllers\Controller;
 	class DumpController extends Controller
 	{
 		public function dumparr()
 		{
-			$users = DB::table('users')->get();
+			$post = Post::all(); 
 			return view('components.dump-content', [
-				'users' => $users,
+				'posts' => $post,
 				'titling' => 'page',
 			]);
 		}

@@ -7,15 +7,10 @@
 </head>
 <body>
 <table>
-	@foreach($users as $user)
+	@foreach($posts as $post)
 	<tr>
-		<td style = "border: 1px solid #000000">{{$user->id}}</td>
-		<td style = "border: 1px solid #000000">{{$user->name}}</td>
-		<td style = "border: 1px solid #000000">{{$user->email}}</td>
-		<td style = "border: 1px solid #000000">{{$user->age}}</td>
-		<td style = "border: 1px solid #000000">{{$user->salary}}</td>
-		<td style = "border: 1px solid #000000">{{$user->password}}</td>
-		<td style = "border: 1px solid #000000">{{$user->cities}}</td>
+		<td style = "border: 1px solid #000000">{{$post->id}}</td>
+		<td style = "border: 1px solid #000000">{{$post->title}}</td>
 	</tr>
 	@endforeach
 </table>
