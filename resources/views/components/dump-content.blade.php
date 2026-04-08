@@ -11,6 +11,7 @@
 	<tr>
 		<td style = "border: 1px solid #000000">{{$post->id}}</td>
 		<td style = "border: 1px solid #000000">{{$post->title}}</td>
+		<td style = "border: 1px solid #000000"><a href="{{ 'https://'.$post->title }}"> ССЫЛКА НА СТАТЬЮ</a></td>
 	</tr>
 	@endforeach
 </table>
