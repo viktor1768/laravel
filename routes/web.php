@@ -16,9 +16,9 @@ Route::get('/blade/{text}', [BladeController::class, 'allblade']);
 Route::get('/tag/{text}', [TagController::class, 'alltag']);
 
 Route::get('/arr', [ArrController::class, 'allarr']);
-
+    
 Route::get('/dump', [DumpController::class, 'dumparr']);
 
 Route::get('/collection', [ColController::class, 'index']);
 
-Route::get('/model/{order}/{dir?}', [ModelController::class, 'index'])->where(['dir'=>'desc|asc']);
+Route::get('/model', [ModelController::class, 'index']);
