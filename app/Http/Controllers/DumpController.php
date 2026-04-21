@@ -1,15 +1,18 @@
 <?php
-	namespace App\Http\Controllers;
+	namespace App\Http\Controllers; 
+	
+    use App\Models\Post;
+    use App\Http\Controllers\Controller;
 	class DumpController extends Controller
 	{
 		public function dumparr()
 		{
+			$post = Post::all(); 
 			return view('components.dump-content', [
-				'title' => 'title page',
-				'arr' => [1,2,3,4,5,6,7,8,9,0,10],
-
-
+				'posts' => $post,
+				'titling' => 'page',
 			]);
 		}
 	}
+	//test commnet for ssh
 ?>	

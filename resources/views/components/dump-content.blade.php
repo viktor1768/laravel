@@ -3,19 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{$title}}</title>
+	<title>{{$titling}}</title>
 </head>
 <body>
-	<ul>
-		@foreach ($arr as $elem)
-		@if($loop->remaining>=3)
-		<b>{{$elem}}</b>
-		@else
-		<i>{{$elem}}</i>
-		@endif
-		@endforeach
-			 
-    </ul>
+<table>
+	@foreach($posts as $post)
+	<tr>
+		<td style = "border: 1px solid #000000">{{$post->id}}</td>
+		<td style = "border: 1px solid #000000">{{$post->title}}</td>
+		<td style = "border: 1px solid #000000"><a href="{{ 'https://'.$post->title }}"> ССЫЛКА НА СТАТЬЮ</a></td>
+	</tr>
+	@endforeach
+</table>
 </body>
 </html>
 	
