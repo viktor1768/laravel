@@ -16,8 +16,9 @@ class ContrySeeder extends Seeder {
 
             DB::table('contry')->insert([
 				[
-				'name' => 'Страна '.$x.,
+				'name' => 'Страна '.$x,
 				],  
 			]);
         }
+    }
 }

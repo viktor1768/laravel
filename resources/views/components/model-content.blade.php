@@ -22,6 +22,16 @@
 		<td style = "border: 1px solid #000000">{{$thumbnails_bel->path}}</td>
 	</tr>
 	@endforeach
+	@forelse($contrys as $contry)
+	<p>{{$contry->name}}</p>
+	    @forelse ($contry->City as $city)
+	        <p>{{ $city->name }}</p>
+	    @empty
+	        <p>none</p>
+	    @endforelse
+	@empty
+	    <p>none</p>
+	@endforelse
 </table>
 </body>
 </html>
