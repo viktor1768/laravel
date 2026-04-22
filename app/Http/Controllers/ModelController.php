@@ -1,6 +1,7 @@
 <?php
 	namespace App\Http\Controllers;
 	use App\Models\Post;
+	use App\Models\Thumbnail;
 	use Illuminate\Database\Eloquent\ModelNotFoundException;
 	use App\Http\Controllers\Controller;
 	use Illuminate\Http\Request;
@@ -10,8 +11,8 @@
 		public function index()
 		{
 			$posts = Post::find(1)->get();
-
-			return view('components.model-content', ['posts'=> $posts]);
+			$thumbnails = Thumbnail::find(1)->get();
+			return view('components.model-content', ['posts'=> $posts, 'thumbnails' => $thumbnails]);
 		}
 	}
 ?>
