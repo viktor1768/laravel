@@ -9,21 +9,17 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
-
-class DatabaseSeeder extends Seeder
-{
-    use WithoutModelEvents;
+class CitySeeder extends Seeder {
     public function run(): void
     {
-			$this->call([
-				PostSeeder::class,
-				CommentSeeder::class,
-                ThumbnailSeeder::class,
-                CitySeeder::class,
-                ContrySeeder::class,
+        for ($x=0; $x<30; $x++){
+
+            DB::table('city')->insert([
+				[
+				'name' => Str::random(10),
+				'contry_id' => rand(1,5),
+				],  
 			]);
-
-
+        }
     }
 }
-

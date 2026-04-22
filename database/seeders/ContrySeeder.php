@@ -9,21 +9,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
-
-class DatabaseSeeder extends Seeder
-{
-    use WithoutModelEvents;
+class ContrySeeder extends Seeder {
     public function run(): void
     {
-			$this->call([
-				PostSeeder::class,
-				CommentSeeder::class,
-                ThumbnailSeeder::class,
-                CitySeeder::class,
-                ContrySeeder::class,
+        for ($x=0; $x<5; $x++){
+
+            DB::table('contry')->insert([
+				[
+				'name' => 'Страна '.$x.,
+				],  
 			]);
-
-
-    }
+        }
 }
-
