@@ -10,9 +10,8 @@
 		public function index()
 		{
 			$posts = Post::find(1)->get();
-			$posts->desc = 'new description';
-			$posts->save();
+
 			return view('components.model-content', ['posts'=> $posts]);
 		}
 	}
-?>	
+?>
