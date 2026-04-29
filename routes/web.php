@@ -8,6 +8,7 @@ use App\Http\Controllers\ArrController;
 use App\Http\Controllers\DumpController;
 use App\Http\Controllers\ColController;
 use App\Http\Controllers\ModelController;
+use App\Http\Controllers\ControlController;
 
 Route::get('/user/{name}/{surname}', [UserController::class, 'all']);
 
@@ -22,3 +23,5 @@ Route::get('/dump', [DumpController::class, 'dumparr']);
 Route::get('/collection', [ColController::class, 'index']);
 
 Route::get('/model', [ModelController::class, 'index']);
+
+Route::get('/control', [ControlController::class, 'index']);

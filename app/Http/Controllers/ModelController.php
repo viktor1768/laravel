@@ -16,9 +16,9 @@
 			$posts = Post::find(1)->get();
 			$thumbnails = Thumbnail::find(1)->get();
 			$contrys = Contry::all();
-			$citys = City::all();
+			$citys = City::with('contry')->get();
 			$users = User::all();
 			return view('components.model-content', ['posts'=> $posts, 'thumbnails' => $thumbnails, 'contrys' => $contrys, 'citys' => $citys,'user' => $users,]);
 		}
 	}
-?>
+?>	
