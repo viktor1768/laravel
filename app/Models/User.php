@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\City;
+use App\Models\Contry;
 
 class User extends Authenticatable
 {
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+
     ];
 
     /**
@@ -45,4 +48,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+	public function city()
+	{
+	    return $this->hasManyThrough(User::class, City::class, 'contry_id', 'city_id');
+	}
 }

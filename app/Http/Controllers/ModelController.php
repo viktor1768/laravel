@@ -16,7 +16,7 @@
 			$thumbnails = Thumbnail::find(1)->get();
 			$contrys = Contry::all();
 			$citys = City::all();
-			return view('components.model-content', ['posts'=> $posts, 'thumbnails' => $thumbnails, 'contrys' => $contrys, 'citys' => $citys]);
+			return view('components.model-content', ['posts'=> $posts, 'thumbnails' => $thumbnails, 'contrys' => $contrys, 'citys' => $citys,]);
 		}
 	}
 ?>

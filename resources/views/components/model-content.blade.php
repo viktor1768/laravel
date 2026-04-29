@@ -32,6 +32,16 @@
 	@empty
 	    <p>none</p>
 	@endforelse
+	@forelse($contrys as $contry)
+	<p>{{$contry->name}}</p>
+	    @forelse ($contry->Users as $user)
+	        <p>{{ $user->name }}</p>
+	    @empty
+	        <p>none</p>
+	    @endforelse
+	@empty
+	    <p>none</p>
+	@endforelse
 </table>
 </body>
 </html>

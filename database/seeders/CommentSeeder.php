@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 class CommentSeeder extends Seeder {
     public function run(): void
     {
-        for ($x=0; $x<11; $x++){
+        for ($x=0; $x<15; $x++){
 
             DB::table('users')->insert([
 				[
@@ -21,7 +21,7 @@ class CommentSeeder extends Seeder {
 				'age' => rand(10,80),
                 'salary' => rand(12000,80000),
                 'password' => Hash::make('12345'),
-                'cities' => Str::random(7).'`s',
+                'city_id' => rand(1,20),
 				],  
 			]);
         }
