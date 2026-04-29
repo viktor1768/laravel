@@ -7,6 +7,7 @@
 </head>
 <body>
 <table>
+
 	@foreach($posts as $poster)
 	<tr>
 		<td style = "border: 1px solid #000000">{{$poster->id}}</td>
@@ -14,6 +15,7 @@
 		<td style = "border: 1px solid #000000">{{$poster->thumbnail->alt}}</td>
 	</tr>
 	@endforeach
+
 	@foreach($thumbnails as $thumbnails_bel)
 	<tr>
 		<td style = "border: 1px solid #000000">{{$thumbnails_bel->post->id}}</td>
@@ -21,6 +23,7 @@
 		<td style = "border: 1px solid #000000">{{$thumbnails_bel->post->desc}}</td>
 		<td style = "border: 1px solid #000000">{{$thumbnails_bel->path}}</td>
 	</tr>
+
 	@endforeach
 	@forelse($contrys as $contry)
 	<p>{{$contry->name}}</p>
@@ -32,16 +35,18 @@
 	@empty
 	    <p>none</p>
 	@endforelse
+
 	@forelse($contrys as $contry)
-	<p>{{$contry->name}}</p>
-	    @forelse ($contry->Users as $user)
-	        <p>{{ $user->name }}</p>
+	<p>Название страны - {{$contry->name}}</p>
+	    @forelse ($contry->User as $user_city)
+	        <p>Житель - {{ $user_city->name }}, город - {{ $user_city->City->name }}</p>
 	    @empty
 	        <p>none</p>
 	    @endforelse
 	@empty
 	    <p>none</p>
 	@endforelse
+	
 </table>
 </body>
 </html>

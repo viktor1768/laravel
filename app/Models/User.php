@@ -50,6 +50,6 @@ class User extends Authenticatable
     }
 	public function city()
 	{
-	    return $this->hasManyThrough(User::class, City::class, 'contry_id', 'city_id');
+	    return $this->belongsTo(City::class);
 	}
 }
