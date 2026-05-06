@@ -9,6 +9,7 @@ use App\Http\Controllers\DumpController;
 use App\Http\Controllers\ColController;
 use App\Http\Controllers\ModelController;
 use App\Http\Controllers\ControlController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/user/{name}/{surname}', [UserController::class, 'all']);
 
@@ -25,3 +26,5 @@ Route::get('/collection', [ColController::class, 'index']);
 Route::get('/model', [ModelController::class, 'index']);
 
 Route::get('/control', [ControlController::class, 'index']);
+
+Route::get('/admin', [AdminController::class, 'index']);

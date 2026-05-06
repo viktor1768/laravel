@@ -10,6 +10,9 @@
 	<div style="border: 1px solid #000000; margin-bottom: 2rem; padding-left: 1rem">
 		<p>Имя отправителя - {{$messager->name}}</p>
 		<p>Сообщение: {{$messager->message}}</p>
+		<form action = "/public/admin" method="GET">
+			
+		</form>
 	</div>
 	@endforeach
 	<form action = "/public/control" method="GET">
