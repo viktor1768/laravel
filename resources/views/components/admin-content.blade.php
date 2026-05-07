@@ -10,17 +10,15 @@
 	<div style="border: 1px solid #000000; margin-bottom: 2rem; padding-left: 1rem">
 		<p>Имя отправителя - {{$messager->name}}</p>
 		<p>Сообщение: {{$messager->message}}</p>
-		<form action = "/public/admin" method="GET">
-			
-		</form>
+		<p><a href = "/public/admin/delete">Удалить</a>
+		<a href = "/public/admin/edit/{{$messager->id}}">Изменить</a></p>
 	</div>
 	@endforeach
 	<form action = "/public/control" method="GET">
 		<input type = "text" name="name" placeholder="Введите имя"><br><br>
 		<textarea name="message" placeholder="Введите сообщение"></textarea><br><br>
 		<button type = "submit">Отправить сообщение</button>
-		<p style = "color: green">{{ $output }}</p>
 	</form>
 </table>
 </body>
-</html>
+</html>	

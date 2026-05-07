@@ -10,17 +10,28 @@
 		public function index(Request $request)
 		{
 
-			if($request->has('name') && $request->has('message')) {
-			    $message = new Message();
-			    $message->name = $request->name;
-			    $message->message = $request->message;
-			    $message->save();
-				$output = 'Сообщение доставлено';
-			}
-
 
 			$messages = Message::orderBy('created_at', 'desc')->get();
-			return view('components.control-content', ['title'=> 'Гостевая книга','message' => $messages, 'output' => $output]);
+			return view('components.admin-content', ['title'=> 'Гостевая книга','message' => $messages]);
+		}
+		public function delete(Request $request){
+			$messages = Message::find($request->id);
+			if ($messages){
+				$messages->delete();
+			}
+			$messages = Message::orderBy('created_at', 'desc')->get();
+			return view('components.admin-content',['title'=> 'Гостевая книга','message' => $messages]);
+		}
+		public function edit(Request $request, $id){
+			$message = Message::find($id);
+			if ($request->has('submit')){
+				$message->name = $request->name;
+				$message->message = $request->message;
+				$message->save();
+			}
+
+			return view('components.edit-content',['message' => $message]);
+			
 		}
 	}
 ?>	

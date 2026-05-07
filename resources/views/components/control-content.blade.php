@@ -16,7 +16,6 @@
 		<input type = "text" name="name" placeholder="Введите имя"><br><br>
 		<textarea name="message" placeholder="Введите сообщение"></textarea><br><br>
 		<button type = "submit">Отправить сообщение</button>
-		<p style = "color: green">{{ $output }}</p>
 	</form>
 </table>
 </body>

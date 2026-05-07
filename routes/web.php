@@ -28,3 +28,8 @@ Route::get('/model', [ModelController::class, 'index']);
 Route::get('/control', [ControlController::class, 'index']);
 
 Route::get('/admin', [AdminController::class, 'index']);
+
+Route::match(['get','post'],'/admin/edit/{id}', [AdminController::class, 'edit']);
+
+Route::get('/admin/delete', [AdminController::class, 'delete']);
+

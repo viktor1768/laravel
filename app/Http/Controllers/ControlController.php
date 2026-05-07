@@ -15,12 +15,11 @@
 			    $message->name = $request->name;
 			    $message->message = $request->message;
 			    $message->save();
-				$output = 'Сообщение доставлено';
 			}
 
 
 			$messages = Message::orderBy('created_at', 'desc')->get();
-			return view('components.control-content', ['title'=> 'Гостевая книга','message' => $messages, 'output' => $output]);
+			return view('components.control-content', ['title'=> 'Гостевая книга','message' => $messages]);
 		}
 	}
 ?>	
