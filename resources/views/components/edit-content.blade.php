@@ -6,9 +6,9 @@
 	<title>Редактирование</title>
 </head>
 <body>
-	<form action="" method="POST">
-		<input name="title" value="{{ $message->name }}">
-		<textarea name="text">{{ $message->message }}</textarea>
+	<form action="/public/admin/edit/{{$message->id}}" method="GET">
+		<input name="name" value="{{ $message->name }}">
+		<textarea name="message">{{ $message->message }}</textarea>
 		<input name="submit" type="submit">
     </form>
 	<a href="/public/admin">Назад</a>

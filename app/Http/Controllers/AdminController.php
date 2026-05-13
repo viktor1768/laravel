@@ -14,13 +14,12 @@
 			$messages = Message::orderBy('created_at', 'desc')->get();
 			return view('components.admin-content', ['title'=> 'Гостевая книга','message' => $messages]);
 		}
-		public function delete(Request $request){
-			$messages = Message::find($request->id);
-			if ($messages){
-				$messages->delete();
-			}
-			$messages = Message::orderBy('created_at', 'desc')->get();
-			return view('components.admin-content',['title'=> 'Гостевая книга','message' => $messages]);
+		public function delete(Request $request, $id){
+			$messages = Message::find($id);
+			$messages->delete();
+
+			$messages_out = Message::orderBy('created_at', 'desc')->get();
+			return view('components.admin-content',['title'=> 'Гостевая книга','message' => $messages_out]);
 		}
 		public function edit(Request $request, $id){
 			$message = Message::find($id);
