@@ -4,6 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Contry;
 use App\Models\User;
+use App\Models\Landmark;
 
 class City extends Model
 {
@@ -15,6 +16,10 @@ class City extends Model
 	public function user()
 	{
         return $this->hasMany(User::class, 'city_id');
+	}
+	public function landmark()
+	{
+        return $this->hasMany(Landmark::class, 'city_id');
 	}
     protected $fillable = [
         'name',

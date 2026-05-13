@@ -9,6 +9,7 @@ use App\Http\Controllers\DumpController;
 use App\Http\Controllers\ColController;
 use App\Http\Controllers\ModelController;
 use App\Http\Controllers\ControlController;
+use App\Http\Controllers\LandmarkController;
 use App\Http\Controllers\AdminController;
 
 Route::get('/user/{name}/{surname}', [UserController::class, 'all']);
@@ -32,4 +33,11 @@ Route::get('/admin', [AdminController::class, 'index']);
 Route::match(['get','post'],'/admin/edit/{id}', [AdminController::class, 'edit']);
 
 Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
+
+
+
+Route::get('/country', [LandmarkController::class, 'index']);
+Route::get('/country/city/{id}', [LandmarkController::class, 'city']);
+Route::get('/country/city/landmark/{id}', [LandmarkController::class, 'landmark']);
+
 
